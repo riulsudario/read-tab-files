@@ -35,6 +35,8 @@ gem 'business_process'
 
 # Toastr notification
 gem 'toastr-rails'
+
+gem 'modulejs-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

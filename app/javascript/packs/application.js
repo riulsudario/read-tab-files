@@ -10,6 +10,10 @@ import "channels"
 import "../stylesheets/application"
 
 Rails.start();
+window.jQuery = $;
+window.$ = $;
+
+require('jquery')
 global.toastr = require('toastr');
 Turbolinks.start();
 ActiveStorage.start();
