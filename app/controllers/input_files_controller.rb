@@ -6,7 +6,7 @@ class InputFilesController < ApplicationController
   end
 
   def create
-    service = InputFiles::CreateService.call(file_params: file_params[:file])
+    service = InputFiles::CreateService.call(file_params: file_params[:file], current_user: current_user)
 
     if service.success?
       redirect_to company_sales_path

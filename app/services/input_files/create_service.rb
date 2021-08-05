@@ -38,7 +38,7 @@ class InputFiles::CreateService < BusinessProcess::Base
 
   def save_data(data)
     CompanySale.create(purchaser_name: data[:purchaser_name], item_description: data[:item_description],
-                       item_price: data[:item_price], purchase_count: data[:purchase_count],
+                       item_price: data[:item_price], purchase_count: data[:purchase_count], user: current_user,
                        merchant_address: data[:merchant_address], merchant_name: data[:merchant_name])
   end
 

@@ -1,4 +1,6 @@
 class CompanySales::IndexService < BusinessProcess::Base
+  needs :current_user
+
   steps :mount_object
 
   def call
@@ -11,7 +13,7 @@ class CompanySales::IndexService < BusinessProcess::Base
   def mount_object
     @company_sales = {}
 
-    return @company_sales unless CompanySale.all.present?
+    return @company_sales unless current_user.company_sales.present?
 
     @company_sales = {
       sales: CompanySale.all,
@@ -21,7 +23,7 @@ class CompanySales::IndexService < BusinessProcess::Base
 
   def calculate_gross
     @total_price = []
-    CompanySale.all.each do |sale|
+    current_user.company_sales.each do |sale|
       @total_price << sale.item_price * sale.purchase_count
     end
 
