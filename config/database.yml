@@ -9,7 +9,7 @@ default: &default
 
 development:
   <<: *default
-  database: nuuvem_teste_develpoment
+  database: nuuvem_teste_development
 
 test: &test
   <<: *default

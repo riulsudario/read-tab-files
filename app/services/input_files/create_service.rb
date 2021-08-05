@@ -1,5 +1,6 @@
 class InputFiles::CreateService < BusinessProcess::Base
   needs :file_params
+  needs :current_user
 
   steps :parse_data,
         :manipulate_data,
