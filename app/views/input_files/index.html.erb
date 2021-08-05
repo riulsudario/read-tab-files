@@ -1,0 +1,11 @@
+<div class="home-container">
+  <%= form_with url: "/input_files", method: :post do |f| %>
+    <div class='input-files-container'>
+      <%= f.file_field 'file', class:'file-input' %>
+    </div>
+
+    <div class='submit-container'>
+      <%= f.submit 'Send', class: 'submit-button' %>
+    </div>
+  <% end %>
+</div>

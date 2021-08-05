@@ -6,7 +6,7 @@ ruby '3.0.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'mysql2', '0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -24,6 +24,11 @@ gem 'smarter_csv'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Business Process for services
+gem 'business_process'
+
+# Toastr notification
+gem 'toastr-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -49,7 +54,12 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
+  gem 'database_cleaner', '2.0.1'
+  gem 'factory_bot_rails', '6.2.0'
+  gem 'rexml'
+  gem 'rspec-rails', '5.0.1'
   gem 'selenium-webdriver'
+  gem 'shoulda', '4.0.0'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
