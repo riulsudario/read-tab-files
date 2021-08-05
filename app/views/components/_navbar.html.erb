@@ -1,0 +1,15 @@
+<div class="navbar-container">
+  <span class="navbar-logo">Read Tab Files</span>
+
+  <% if signed_in? %>
+    <div class="navbar-links">
+      <%= tag.a "Home", href: root_path, class: "navbar-link-item" %>
+      <%= tag.a "Company Sales Balance", href: company_sales_path, class: "navbar-link-item" %>
+    </div>
+  <% else %>
+    <div class="navbar-links">
+      <%= tag.a "Register", href: new_user_registration_path, class: "navbar-link-item" %>
+      <%= tag.a "Login", href: new_user_session_path, class: "navbar-link-item" %>
+    </div>
+  <% end %>
+</div>

@@ -1,9 +1,30 @@
-<div class="login">
-  <div class="login-container">
-    <div class='omni-auth'>
-        <%= form_tag(user_facebook_omniauth_authorize_path, class: 'facebook', method: :post) do %>
-          <button type='submit'>Continue with Facebook</p>
-        <% end %>
-    </div>
+<div class="login-container">
+  <%= render partial: "./components/navbar" %>
+
+  <div class="login-form-container">
+    <%= form_with url: user_session_path, method: :post, remote: false, class: "form", local: true do |f| %>
+        <div class="field">
+          <%= f.label :emails, "Email", class: "label" %>
+          <%= f.email_field :email, autocomplete: "email", class: "input", required: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "Password", class: "label" %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "password", class: "input", required: true %>
+        </div>
+
+        <div class="buttons">
+          <%= tag.a "Dont have an account?", class: "links", href: new_user_registration_path %>
+          <%= f.submit "Submit", class: "submit-button" %>
+        </div>
+      <% end %>
+
+      <hr class="separator">
+
+      <div class="omni-auth">
+          <%= form_tag(user_facebook_omniauth_authorize_path, class: "facebook", method: :post) do %>
+            <button class="facebook-button" type="submit">Continue with Facebook</button>
+          <% end %>
+      </div>
   </div>
 </div>

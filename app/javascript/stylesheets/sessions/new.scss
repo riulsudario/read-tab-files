@@ -1,0 +1,72 @@
+@import '../_variables.scss';
+
+.login-container {  
+  .login-form-container {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .form {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .field {
+        margin: 4px 0 16px;
+
+        .input {
+          display: block;
+          height: 20px;
+          width: 320px;
+          padding: 8px 16px;
+          font-size: 16px;
+          border-radius: 4px;
+          border: 1px solid $nero;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+
+        .submit-button {
+          margin: 12px 0;
+          font-size: 16px;
+          background-color: $fiord;
+          color: $white;
+          border: none;
+          border-radius: 4px;
+          padding: 8px 16px;
+          width: 360px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .separator {
+      width: 400px;
+      height: 1px;
+      border: none;
+      background: $white_smoke;
+    }
+
+    .omni-auth {
+      .facebook {
+        .facebook-button {
+          width: 360px;
+          padding: 8px 16px;
+          font-size: 16px;
+          border: none;
+          border-radius: 4px;
+          background: $facebook;
+          color: $white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
