@@ -16,7 +16,7 @@ class CompanySales::IndexService < BusinessProcess::Base
     return @company_sales unless current_user.company_sales.present?
 
     @company_sales = {
-      sales: CompanySale.all,
+      sales: current_user.company_sales,
       total_gross: calculate_gross
     }
   end

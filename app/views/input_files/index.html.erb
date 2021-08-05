@@ -1,11 +1,17 @@
 <div class="home-container">
-  <%= form_with url: "/input_files", method: :post do |f| %>
-    <div class='input-files-container'>
-      <%= f.file_field 'file', class:'file-input' %>
-    </div>
+  <%= render partial: "./components/navbar" %>
 
-    <div class='submit-container'>
-      <%= f.submit 'Send', class: 'submit-button' %>
-    </div>
-  <% end %>
+  <div class="home-form-container">
+    <%= form_with url: "/input_files", class: 'form', method: :post do |f| %>
+      <h1 class="title">Input a tab file</h1>
+
+      <div class='input-files-container'>
+        <%= f.file_field 'file', class:'file-input' %>
+      </div>
+
+      <div class='submit-container'>
+        <%= f.submit 'Send', class: 'submit-button' %>
+      </div>
+    <% end %>
+  </div>
 </div>

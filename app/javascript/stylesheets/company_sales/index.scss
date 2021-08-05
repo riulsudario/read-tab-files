@@ -1,0 +1,61 @@
+.company-sales-container {
+  .company-sales-body {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+    .row {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 16px 0 0;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .company-sales-table-container {
+      height: 60vh;
+      overflow: auto;
+      
+      .company-sales-table {
+  
+        td, tr {
+          border: 1px solid $white_smoke;
+          padding: 8px;
+  
+          &:not(td):nth-child(even){ 
+            background-color: $white_smoke;
+          }
+        }
+  
+        th {
+          padding: 8px 16px;
+          text-align: left;
+          background-color: $nero;
+          color: $white;
+        }
+      }
+
+      &::-webkit-scrollbar{
+        width: 4px;
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $white_smoke;
+        border-radius: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover{
+        background: $white_smoke;
+      }
+
+      &::-webkit-scrollbar-track{
+        background: #F0F0F0;
+        border-radius: 0px;
+        box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+      }
+    }
+  }
+}

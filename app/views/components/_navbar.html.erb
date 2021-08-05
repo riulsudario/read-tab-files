@@ -5,6 +5,9 @@
     <div class="navbar-links">
       <%= tag.a "Home", href: root_path, class: "navbar-link-item" %>
       <%= tag.a "Company Sales Balance", href: company_sales_path, class: "navbar-link-item" %>
+      <%= form_with url: destroy_user_session_path, method: :delete, remote: false, class: "form", local: true do |f| %>
+        <%= f.submit "Logout", href: destroy_user_session_path, class: "navbar-link-item" %>
+      <% end %>
     </div>
   <% else %>
     <div class="navbar-links">

@@ -1,0 +1,25 @@
+.home-container {
+  .home-form-container {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .form {
+      text-align: center;
+
+      .submit-button {
+        margin: 12px 0;
+        font-size: 16px;
+        background-color: $fiord;
+        color: $white;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        width: 360px;
+        cursor: pointer;
+      }
+    }
+  }
+}

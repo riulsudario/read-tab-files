@@ -1,26 +1,38 @@
 <div class="company-sales-container">
   <%= render partial: './components/navbar' %>
-  <table>
+
+  <div class="company-sales-body">
     <% if @company_sales.present? %>
-      <p>Total gross: <%= @company_sales[:total_gross] %></p>
-      <tr>
-        <th>Purchaser name</th>
-        <th>Item description</th>
-        <th>Item price</th>
-        <th>Purchase count</th>
-        <th>Merchant address</th>
-        <th>Merchant name</th>
-      </tr>
-      <% @company_sales[:sales].each do |company_sale| %>
-        <tr>
-          <td><%= company_sale.purchaser_name %></td>
-          <td><%= company_sale.item_description %></td>
-          <td><%= company_sale.item_price %></td>
-          <td><%= company_sale.purchase_count %></td>
-          <td><%= company_sale.merchant_address %></td>
-          <td><%= company_sale.merchant_name %></td>
-        </tr>
-      <% end %>
+      <div class="row">
+        <p>Total gross: $<%= @company_sales[:total_gross] %></p>
+      </div>
     <% end %>
-  </table>
+    
+    <div class="company-sales-table-container">
+      <table class="company-sales-table">
+        <% if @company_sales.present? %>
+          <tr>
+            <th>Purchaser name</th>
+            <th>Item description</th>
+            <th>Item price</th>
+            <th>Purchase count</th>
+            <th>Merchant address</th>
+            <th>Merchant name</th>
+          </tr>
+          <% @company_sales[:sales].each do |company_sale| %>
+            <tr>
+              <td><%= company_sale.purchaser_name %></td>
+              <td><%= company_sale.item_description %></td>
+              <td>$<%= company_sale.item_price %></td>
+              <td><%= company_sale.purchase_count %></td>
+              <td><%= company_sale.merchant_address %></td>
+              <td><%= company_sale.merchant_name %></td>
+            </tr>
+          <% end %>
+        <% else %>
+          <h1>You haven't any sales to show! :(</h1>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>
