@@ -8,8 +8,6 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     user = User.new(user_params)
     if user.save
-      create_profile
-
       flash[:notice] = 'User registered'
       redirect_to new_user_session_url
     else

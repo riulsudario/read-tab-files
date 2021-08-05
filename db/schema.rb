@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2021_08_05_145656) do
     t.integer "purchase_count"
     t.string "merchant_address"
     t.string "merchant_name"
-    t.bigint "users_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_company_sales_on_users_id"
+    t.index ["user_id"], name: "index_company_sales_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -43,4 +43,5 @@ ActiveRecord::Schema.define(version: 2021_08_05_145656) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "company_sales", "users"
 end

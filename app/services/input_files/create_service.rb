@@ -2,7 +2,8 @@ class InputFiles::CreateService < BusinessProcess::Base
   needs :file_params
   needs :current_user
 
-  steps :parse_data,
+  steps :verify_user,
+        :parse_data,
         :manipulate_data,
         :calculate_gross
 
@@ -12,6 +13,10 @@ class InputFiles::CreateService < BusinessProcess::Base
   end
 
   private
+
+  def verify_user
+    return fail('You must be logged to upload a file') unless current_user.present?
+  end
 
   def parse_data
     return fail('File is required') unless file_params.present?

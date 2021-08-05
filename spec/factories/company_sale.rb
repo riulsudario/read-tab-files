@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :company_sale do
+    association :user
     purchaser_name { 'Riul Sudario de Souza' }
     item_description { 'Cupom de 50% de desconto em ferramentas' }
     item_price { 100 }

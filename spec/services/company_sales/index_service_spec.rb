@@ -1,11 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe CompanySales::IndexService, type: :service do
+RSpec.describe 'CompanySales::IndexService', type: :service do
   describe 'Gera os relatórios' do
     it 'Verifica as records no banco de dados preenchido e lista as vendas e o valor total' do
-      10.times { FactoryBot.create(:company_sale) }
+      user = FactoryBot.create(:user)
 
-      service = CompanySales::IndexService.call(nil)
+      10.times { FactoryBot.create(:company_sale, user: user) }
+
+      service = CompanySales::IndexService.call(current_user: user)
 
       expect(service.success?).to be_truthy
       expect(service.result[:total_gross].present?).to be_truthy
@@ -14,7 +16,9 @@ RSpec.describe CompanySales::IndexService, type: :service do
     end
 
     it 'Procura as informacoes no banco (vazio)' do
-      service = CompanySales::IndexService.call(nil)
+      user = FactoryBot.create(:user)
+
+      service = CompanySales::IndexService.call(current_user: user)
 
       expect(service.success?).to be_truthy
       expect(service.result).to be_empty
