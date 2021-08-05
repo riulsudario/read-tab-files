@@ -37,6 +37,9 @@ gem 'business_process'
 gem 'toastr-rails'
 
 gem 'modulejs-rails'
+
+# compile assets
+gem 'rails_12factor'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
